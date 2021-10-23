@@ -4,6 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/ZennARFoundationDebug/Scenes/main.unity
+    guid: 1416aa38cead53549b85961d4a72a569
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: d462babe52a6d394a90d62016246a452, type: 2}
