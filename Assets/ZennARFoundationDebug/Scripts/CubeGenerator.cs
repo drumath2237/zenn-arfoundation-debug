@@ -1,5 +1,4 @@
 ﻿using System;
-using Unity.Mathematics;
 using UnityEngine;
 
 namespace ZennARFoundationDebug
@@ -8,24 +7,26 @@ namespace ZennARFoundationDebug
     {
         [SerializeField] private GameObject _cube;
 
-        private Camera mainCamera;
-
-        private void Start()
-        {
-            mainCamera = Camera.main;
-        }
+        [SerializeField] private Camera mainCamera;
 
         public void GenerateRigidBodyCube()
         {
             if (_cube == null)
             {
+                Debug.Log("cube prefab is null!");
+                return;
+            }
+
+            if (mainCamera == null)
+            {
+                Debug.Log("camera is null!");
                 return;
             }
 
             var transform1 = mainCamera.transform;
-            var position = transform1.position + transform1.forward * 0.1f;
+            var position = transform1.position + transform1.forward * 0.3f;
 
-            Instantiate(_cube, position, quaternion.identity);
+            Instantiate(_cube, position, Quaternion.identity);
         }
     }
 }
